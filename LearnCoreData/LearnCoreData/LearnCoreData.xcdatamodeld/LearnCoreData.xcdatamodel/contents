@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <relationship name="manufacturer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Manufacturer"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Human" inverseName="car" inverseEntity="Human"/>
+    </entity>
+    <entity name="Human" representedClassName="Human" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gender" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="car" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="owner" inverseEntity="Car"/>
+    </entity>
+    <entity name="Manufacturer" representedClassName="Manufacturer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Human" positionX="-34.96484375" positionY="31.0625" width="128" height="103"/>
+        <element name="Car" positionX="231.609375" positionY="-295.7265625" width="128" height="88"/>
+        <element name="Manufacturer" positionX="483.7890625" positionY="-20.84765625" width="128" height="44"/>
+    </elements>
+</model>
